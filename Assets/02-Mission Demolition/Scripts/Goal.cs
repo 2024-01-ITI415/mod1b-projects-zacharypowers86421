@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
+
 
 public class Goal : MonoBehaviour
 {
 	static public bool 	goalMet = false;
 
-	void OnTriggerEnter(Collider other) {
+	async void OnTriggerEnter(Collider other) {
 		// when the trigger is hit by something
 		// check to see if it's a Projectile 
 		if (other.gameObject.tag == "Projectile") {
@@ -18,7 +20,8 @@ public class Goal : MonoBehaviour
 			Color c = mat.color;
 			c.a = 1;
 			mat.color = c;
-		}
+
+        }
 	}
     // Start is called before the first frame update
     void Start()
